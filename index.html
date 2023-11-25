@@ -1,0 +1,281 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Proyecto House Market</title>
+
+  <link rel="stylesheet" type="text/css" href="style/style.css" title="style" />
+  <link rel="stylesheet" href="style.css">
+  <script src="script_1.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+  <script src="https://datamaps.github.io/scripts/0.5.0/datamaps.world.min.js"></script>
+
+</head>
+
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><a href="index.html">Proyecto<span class="logo_colour"> House Market</span></a></h1>
+          <h2>Proyecto grupal</h2>
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+          <li><a href="ETL.html">ETL</a></li>
+          <li><a href="index.html">Analisis</a></li>
+         
+        </ul>
+      </div>
+    </div>
+    <div id="site_content">
+      <div class="sidebar">
+        <!-- insert your sidebar items here -->
+        <img src='house.jpg' width="40%">
+        <h3>Latest News</h3>
+        <h4>New Website Launched</h4>
+        <h5>January 1st, 2010</h5>
+        <p>2010 sees the redesign of our website. Take a look around and let us know what you think.<br /><a
+            href="#">Read more</a></p>
+        <p></p>
+        <h4>New Website Launched</h4>
+        <h5>January 1st, 2010</h5>
+        <p>2010 sees the redesign of our website. Take a look around and let us know what you think.<br /><a
+            href="#">Read more</a></p>
+        <h3>Useful Links</h3>
+        <ul>
+          <li><a href="#">link 1</a></li>
+          <li><a href="#">link 2</a></li>
+          <li><a href="#">link 3</a></li>
+          <li><a href="#">link 4</a></li>
+        </ul>
+        <h3>Search</h3>
+        <form method="post" action="#" id="search_form">
+          <p>
+            <input class="search" type="text" name="search_field" value="Enter keywords....." />
+            <input name="search" type="image" style="border: 0; margin: 0 0 -9px 5px;" src="style/search.png"
+              alt="Search" title="Search" />
+          </p>
+        </form>
+      </div>
+
+      <div id="content">
+        <!-- insert the page content here -->
+        <h1>Entendimiento de las necesidades</h1>
+        <!--<img src="mapa.jpg" alt="USA" width="100%"> -->
+
+        <p>Tomamos como hipotesis que nos dedicamos a manejar una cartera de clientes con determinadas caracteristicas.
+          Lo que nos permite anticipar de antemano cuales van a ser sus necesidades y de esta manera poder realizar los
+          mejores reportes de calidad del mercado inmobiliario de <strong>EE. UU.</strong> para aumentar la ganancia y
+          reducir pérdidas del
+          inversionista, evaluamos casos donde tienen mucha probabilidad de crecer económicamente y todavía no estan
+          totalmente
+          desarrolladas. . Los datos del mercado inmobliario provienen de <a
+            href="https://www.zillow.com/home-values/102001/united-states/">Zillow house market</a>
+        </p>
+
+        <h3>Florida vs Nebraska</h3>
+        <div class="contenedor">
+          <div class="box" id="map" width="100%"></div>
+        </div>
+        <h3>Breve recorrido por Florida</h3>
+        <div class="contenedor">
+          <div class="container">
+            <img src="img/florida-Jacksonville..jpg" alt="Avatar" class="image">
+            <div class="overlay">
+              <div class="text">Florida-Jacksonville.</div>
+            </div>
+          </div>
+
+          <div class="container">
+            <img src="img/florida-Miami..jpg" alt="Avatar" class="image">
+            <div class="overlay">
+              <div class="text">Florida-Miami.</div>
+            </div>
+          </div>
+
+
+          <div class="container">
+            <img src="img/florida-Orlando..jpg" alt="Avatar" class="image">
+            <div class="overlay">
+              <div class="text">Florida-Orlando.</div>
+            </div>
+          </div>
+
+
+          <div class="container">
+            <img src="img/florida-Tampa..jpg" alt="Avatar" class="image">
+            <div class="overlay">
+              <div class="text">Florida-Tampa.</div>
+            </div>
+          </div>
+        </div>
+
+        <h3>Breve recorrido por Nebraska</h3>
+        <div class="contenedor">
+          <div class="container">
+            <img src="img/omaha..png" alt="Avatar" class="image">
+            <div class="overlay">
+              <div class="text">Nebraska-omaha.</div>
+            </div>
+          </div>
+
+          <div class="container">
+            <img src="img/Nebraska-Lincoln.jpg" alt="Avatar" class="image">
+            <div class="overlay">
+              <div class="text">Nebraska-Lincoln</div>
+            </div>
+          </div>
+          <div class="container">
+            <img src="img/Nebraska-Gran Island.jpg" alt="Avatar" class="image">
+            <div class="overlay">
+              <div class="text">Gran Island</div>
+            </div>
+          </div>
+        </div>
+        <p>Es necesario realizar la siguiente comparacion empezando por la tasa de desempleo.</p>
+        <button class="button" onclick="mostrarOcultarContenedor()">Desempleo <strong>Nebraska</strong> vs
+          <strong>Florida</strong></button>
+
+        <div class="divgreen" id="miContenedor" style="display: none">
+          <h3>Desempleo <strong>Nebraska</strong> vs <strong>Florida</strong></h3>
+          <p>Para resolver cuestiones relacionadas con la inversión vemos que si tomamos en cuenta la tasa de desempleo
+            en
+            el estado de <strong> Nebraska</strong> hay un 2.3 % de desempleo.Indicando que es más bajo pensaríamos que
+            es mejor que otros estados como <strong> Florida</strong> que tiene una tasa de desempleo del % 2.7, ya que
+            tendría más desarrollo económico por ende la propiedad sería más fácil de vender.
+          </p>
+
+          <div style="width: 600px">
+            <canvas id="grafica"></canvas>
+            <script src="script.js"></script>
+            <p>
+
+            </p>
+            <a href="https://es.statista.com/estadisticas/634616/tasa-de-desempleo-estatal-en-ee-uu/"> Datos acá</a>
+          </div>
+        </div>
+        <p>Continuando con el ejemplo de <strong>Nebraska</strong> vemos otros factores importantes como el clima 🌅.
+        </p>
+        <button class="button1" onclick="mostrarOcultarContenedor1()">Clima <strong>Nebraska</strong> vs
+          <strong>Florida</strong></button>
+
+        <div class="divred" id="miContenedor1" style="display: none">
+          <h3>Clima <strong>Nebraska</strong> vs <strong>Florida</strong></h3>
+          <p><strong>Nebraska</strong> posee un clima semiárido. Experimenta cambios bruscos de temperatura y del
+            viento.
+            Resulta difícil de predecir. En invierno, las temperaturas son bastante bajas y las de verano,
+            excepcionalmente
+            calientes.
+            La temporada de lluvia – en ocasiones tormentosa – se centra en los meses cálidos, alcanza su máximo en
+            junio y
+            desciende principalmente por las noches.
+          </p>
+          <p> <strong>Florida</strong>, por el gran territorio costero, es el único estado continental de los Estados
+            Unidos
+            con clima
+            tropical el otro estado con este tipo de clima es Hawái</p>
+        </div>
+        <p> Seguimos con el nivel de urbanización. 🏨</p>
+        <button class="button2" onclick="mostrarOcultarContenedor2()">Economía <strong>Nebraska</strong> vs
+          <strong>Florida</strong></button>
+
+        <div class="divgreen" id="miContenedor2" style="display: none">
+          <h3>Economía <strong>Nebraska</strong> vs <strong>Florida</h3>
+          <p><strong>Nebraska</strong> se sustenta en la ganadería, cría de cerdos, extracción de azúcar y cultivo de
+            maíz,
+            soja,
+            heno,
+            strigo, sorgo, papas y granos. Su industria abarca las áreas de procesamiento de alimentos, fabricación de
+            maquinaria y equipos eléctricos, imprentas y editoriales.
+            Sus atracciones turísticas comprenden zoológicos de renombre mundial, acuarios, bosques de lluvia tropical y
+            escenarios espectaculares de muchos lagos y ríos.
+            Asimismo, existe una tradición profundamente arraigada del oeste norteamericano, museos de historia militar
+            y de
+            la aviación e innumerables oportunidades para la caza y la pesca.
+          <p><strong>Florida</strong> es reconocida por sus parques de atracciones (como Walt Disney World, Bush
+            Gardens y Universal Studios Florida), sus cultivos de cítricos, sus verduras de invierno, el Centro Espacial
+            Kennedy, y como un destino
+            turístico popular entre los jubilados estadounidenses.</p>
+
+          </p>
+        </div>
+        <h3 href="https://www.nar.realtor/research-and-statistics/research-reports/2022-housing-market-hidden-gems">De
+          cara al mercado inmobiliario de 2022 📈</h3>
+        <p>
+          En 2022, se espera que la tasa hipotecaria fija a 30 años aumente a un promedio del 3,5% desde el 3% en 2021.
+          Con este aumento de las tasas, es probable que las ventas de viviendas usadas disminuyan ligeramente de 6,12
+          millones en 2021 a 5,9 millones en 2022.
+
+          Se espera que los cuellos de botella en la cadena de suministro se alivien en 2022, salvo que se produzca un
+          resurgimiento importante de la COVID, y el desempleo seguirá cayendo. En estas condiciones, se espera que el
+          total de nuevas unidades de viviendas unifamiliares y multifamiliares iniciadas aumente modestamente a 1,67
+          millones. La construcción de viviendas irá al ritmo de la formación de hogares (1,75 millones en 2020).
+
+          Se espera que los precios de las viviendas aumenten, aunque a un ritmo modesto, inferior al 5%.
+          <a
+            href="chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://cdn.nar.realtor//sites/default/files/documents/2022-housing-market-hidden-gems-12-17-2021.pdf?_gl=1*1t2feyf*_gcl_au*MTg2NjY3MDQ1NC4xNzAwNzcwNDQx">2022
+            Housing Market </a>
+
+        </p>
+        <button class="button3" onclick="mostrarOcultarContenedor3()">Resumen</button>
+        <div class="divyellow" id="miContenedor3" style="display: none">
+          <h3>Resumen</h3>
+          <p>
+            En resumen, considerando las condiciones económicas y proyecciones para el mercado inmobiliario en 2022, la
+            decisión de invertir en <strong>Florida</strong> emerge como la opción más atractiva y sólida. La
+            diversificación económica del
+            estado, que abarca desde parques de atracciones hasta el Centro Espacial Kennedy, su gran costa y cultivos
+            de
+            cítricos,
+            proporciona una mayor estabilidad en comparación con la dependencia significativa de
+            <strong>Nebraska</strong>
+            en la ganadería y
+            la agricultura.
+          </p>
+          <p>
+            A medida que las tasas hipotecarias experimentan un aumento moderado en 2022, <strong>Florida</strong>,
+            respaldada por su
+            desarrollo económico continuo y atractivo clima, se posiciona como un mercado inmobiliario robusto. Se
+            espera
+            que la disminución proyectada en las ventas de viviendas usadas a nivel nacional no afecte de manera
+            significativa a <strong>Florida</strong>, donde la diversificación económica actúa como un amortiguador ante
+            las
+            fluctuaciones
+            del mercado.
+          </p>
+          <p>
+            Además, la perspectiva de una mayor construcción de nuevas unidades de viviendas en
+            <strong>Florida</strong>, en
+            comparación con
+            otros estados, señala un crecimiento sostenido respaldado por la formación de hogares y el descenso del
+            desempleo. Aunque se proyecta un aumento moderado en los precios de las viviendas, este incremento se espera
+            que
+            sea inferior al 5%, lo que sugiere un entorno favorable para los inversores que buscan retornos consistentes
+            y
+            sostenibles.
+          </p>
+          <p>
+            En conclusión, las condiciones económicas, la diversificación y el atractivo mercado inmobiliario proyectado
+            para 2022 respaldan de manera contundente la elección de <strong>Florida</strong> como la opción preferida
+            para
+            inversiones,
+            ofreciendo no solo mayores posibilidades de retorno de inversión, sino también una menor exposición a
+            riesgos en
+            comparación con otras regiones.
+
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+</body>
+
+</html>
