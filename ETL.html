@@ -2,11 +2,18 @@
 <html>
 
 <head>
-  <title>colour_blue - examples</title>
+  <title>ETL</title>
   <meta name="description" content="website description" />
   <meta name="keywords" content="website keywords, website keywords" />
   <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
   <link rel="stylesheet" type="text/css" href="style/style.css" title="style" />
+  <script src="script.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+  <script src="https://datamaps.github.io/scripts/0.5.0/datamaps.world.min.js"></script>
+
+
 </head>
 
 <body>
@@ -15,8 +22,8 @@
       <div id="logo">
         <div id="logo_text">
           <!-- class="logo_colour", allows you to change the colour of the text -->
-          <h1><a href="index.html">colour<span class="logo_colour">blue</span></a></h1>
-          <h2>Simple. Contemporary. Website Template.</h2>
+          <h1><a href="index.html">Proyecto<span class="logo_colour"> House Market</span></a></h1>
+          <h2>Proyecto grupal</h2>
         </div>
       </div>
       <div id="menubar">
@@ -24,6 +31,7 @@
           <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
           <li><a href="ETL.html">ETL</a></li>
           <li><a href="index.html">Analisis</a></li>
+          <li><a href="Dashboard.html">Dashboard</a></li>
         </ul>
       </div>
     </div>
@@ -58,14 +66,79 @@
       </div>
       <div id="content">
         <!-- insert the page content here -->
-        <h1>ETL</h1>
+        <h1>Preparar los datos</h1>
         <p>Para tener los datos disponibles en una base de datos primero es necesario procesar los mismos, teniendo en
           cuenta la calidad. Para garantizar la misma decidimos revisar cada archivo y por esta razon tenemos varios
           jupyter nootbook disponibles con el analis exploratorio de los datos.</p>
-        <h2>A continuacion:</h2>
-        <p>These are the different heading formats:</p>
-        <h1>Heading 1</h1>
-        <h2>Heading 2</h2>
+
+        <button class="button" onclick="mostrarOcultarContenedor()">Jupyter nootbooks</button>
+
+        <div class="divgreen" id="miContenedor" style="display: none">
+          <h2>A continuacion:</h2>
+          <ul>
+            <li><a
+                href="https://github.com/bparedes21/Proyecto-Grupal/blob/main/EDA/EDA_Economics_Data.ipynb">EDA_Economics_Data.ipynb</a>
+            </li>
+            <li><a
+                href="https://github.com/bparedes21/Proyecto-Grupal/blob/main/EDA/EDA_House_Price_Parte_1.ipynb">EDA_House_Price_Parte_1.ipynb</a>
+            </li>
+            <li><a
+                href="https://github.com/bparedes21/Proyecto-Grupal/blob/main/EDA/EDA_House_Price_Parte_2.ipynb">EDA_House_Price_Parte_2.ipynb</a>
+            </li>
+            <li><a
+                href="https://github.com/bparedes21/Proyecto-Grupal/blob/main/EDA/EDA_House_Price_Parte_3.ipynb">EDA_House_Price_Parte_3.ipynb</a>
+            </li>
+            <li><a
+                href="https://github.com/bparedes21/Proyecto-Grupal/blob/main/EDA/EDA_House_Price_Parte_4.ipynb">EDA_House_Price_Parte_4.ipynb</a>
+            </li>
+            <li><a
+                href="https://github.com/bparedes21/Proyecto-Grupal/blob/main/EDA/EDA_House_Price_Parte_5.ipynb">EDA_House_Price_Parte_5.ipynb</a>
+            </li>
+            <li><a
+                href="https://github.com/bparedes21/Proyecto-Grupal/blob/main/EDA/EDA_House_Price_Parte_6.ipynb">EDA_House_Price_Parte_6.ipynb</a>
+            </li>
+            <li><a
+                href="https://github.com/bparedes21/Proyecto-Grupal/blob/main/EDA/EDA_Rent_Index.ipynb">EDA_Rent_Index.ipynb</a>
+            </li>
+            <li><a
+                href="https://github.com/bparedes21/Proyecto-Grupal/blob/main/EDA/EDA_US_HousingMarketFactors.ipynb">EDA_US_HousingMarketFactors.ipynb</a>
+            </li>
+            <li><a
+                href="https://github.com/bparedes21/Proyecto-Grupal/blob/main/EDA/EDA_Rent_Index.ipynb">EDA_Rent_Index.ipynb</a>
+            </li>
+          </ul>
+        </div>
+
+        <p>Al momento de efectuar el analisis exploratorio adoptamos la estrategia de automatizar la etapa de
+          procesamiento y evaluacion de los datos debido al gran numero de archivos a utilizar (53 archivos en 4
+          carpetas). Con esto conseguimos optimizar el tiempo y el costo del trabajo.
+
+          Los pasos de este analisis fueron:</p>
+
+        <ul>
+          <li>Explorar algunos registros de cada dataset, con el fin de conocer la distribucion y las variables
+            presentes.</li>
+          <li>Obtener informacion de los tipos de datos, cantidad de filas y columnas.</li>
+
+        </ul>
+        <p>Conseguir medidas estadisticas de los mismos, para conocer su comportamiento. Determinar cantidad de:</p>
+        <ul>
+          <li>Valores Faltantes</li>
+          <li>Registros Duplicados</li>
+          <li>Outliers</li>
+        </ul>
+        <button class="button1" onclick="mostrarOcultarContenedor1()">Conclusion</button>
+
+        <div class="divred" id="miContenedor1" style="display: none">
+          <h1>A continuacion:</h1>
+          <ol>
+            <li>Se determino que los archivos contenidos en las carpetas Zillow House Price Data y Zillow Rent Index no presentan informacion relevante, ya que lo que aportan esta contenido en los archivos time series de la carpeta Zillow Economics Data, por lo que no sera utilizados.</li>
+            <li>Eliminar columnas con valores nulos >= 70%. </li>         
+           <li>Aplicar filtro por RegionName y completar con una medida de tendencia central las columnas que presenten 0% < valores nulos < 70%</li>
+          </ol>
+        </div>
+        <h2>Video deploy ETL-DB-DOCKER-HIVE</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/z9z-gUA_OKQ/?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <h3>Heading 3</h3>
         <h4>Heading 4</h4>
         <h5>Heading 5</h5>

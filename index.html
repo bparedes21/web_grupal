@@ -2,11 +2,11 @@
 <html>
 
 <head>
-  <title>Proyecto House Market</title>
+  <title>Analisis</title>
 
   <link rel="stylesheet" type="text/css" href="style/style.css" title="style" />
   <link rel="stylesheet" href="style.css">
-  <script src="script_1.js" defer></script>
+  <script src="script.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
@@ -29,7 +29,7 @@
           <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
           <li><a href="ETL.html">ETL</a></li>
           <li><a href="index.html">Analisis</a></li>
-         
+          <li><a href="Dashboard.html">Dashboard</a></li>
         </ul>
       </div>
     </div>
@@ -80,10 +80,12 @@
         </p>
 
         <h3>Florida vs Nebraska</h3>
+        <h5>Pasar mouse por encima del mapa para conocer los estados</h5>
         <div class="contenedor">
           <div class="box" id="map" width="100%"></div>
         </div>
         <h3>Breve recorrido por Florida</h3>
+        <h5>Pasar mouse por encima de las imagenes para conocer las ciudades</h5>
         <div class="contenedor">
           <div class="container">
             <img src="img/florida-Jacksonville..jpg" alt="Avatar" class="image">
@@ -117,6 +119,7 @@
         </div>
 
         <h3>Breve recorrido por Nebraska</h3>
+        <h5>Pasar mouse por encima de las imagenes para conocer las ciudades</h5>
         <div class="contenedor">
           <div class="container">
             <img src="img/omaha..png" alt="Avatar" class="image">
@@ -143,10 +146,10 @@
           <strong>Florida</strong></button>
 
         <div class="divgreen" id="miContenedor" style="display: none">
-          <h3>Desempleo <strong>Nebraska</strong> vs <strong>Florida</strong></h3>
+          <h3>Desempleo <strong>Nebraska</strong> vs <strong>Florida</strong> Diciembre 2022</h3>
           <p>Para resolver cuestiones relacionadas con la inversión vemos que si tomamos en cuenta la tasa de desempleo
             en
-            el estado de <strong> Nebraska</strong> hay un 2.3 % de desempleo.Indicando que es más bajo pensaríamos que
+            el estado de <strong> Nebraska</strong> hay un 2.7 % de desempleo.Indicando que es más bajo pensaríamos que
             es mejor que otros estados como <strong> Florida</strong> que tiene una tasa de desempleo del % 2.7, ya que
             tendría más desarrollo económico por ende la propiedad sería más fácil de vender.
           </p>
@@ -157,7 +160,7 @@
             <p>
 
             </p>
-            <a href="https://es.statista.com/estadisticas/634616/tasa-de-desempleo-estatal-en-ee-uu/"> Datos acá</a>
+            <a href="https://fred.stlouisfed.org/series/FLUR"> Datos acá</a>
           </div>
         </div>
         <p>Continuando con el ejemplo de <strong>Nebraska</strong> vemos otros factores importantes como el clima 🌅.

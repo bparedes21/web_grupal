@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Dashboard</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+  <link rel="stylesheet" type="text/css" href="style/style.css" title="style" />
+  <link rel="stylesheet" href="style.css">
+
+  <script src="script.js" defer></script>
+
+  <script src="script_1.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+  <script src="https://datamaps.github.io/scripts/0.5.0/datamaps.world.min.js"></script>
+
+
+
+</head>
+
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><a href="index.html">Proyecto<span class="logo_colour"> House Market</span></a></h1>
+          <h2>Proyecto grupal</h2>
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+          <li><a href="ETL.html">ETL</a></li>
+          <li><a href="index.html">Analisis</a></li>
+          <li><a href="Dashboard.html">Dashboard</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="content_header"></div>
+    <div id="site_content_1">
+      <div class="contenedor_principal">
+        <div class="contenedor-dos">
+          <h1>Desempleo ultimo semestre 2022</h1>
+          <div class="contenedor-dos"><canvas id="myChart"></canvas></div>
+        </div>
+       <div class="contenedor-uno">
+        <div class="contenedor-uno">
+          <h1>Viviendas sin rentar 2020 - 2022</h1>
+          <div class="contenedor-uno"><canvas id="myChart1"></canvas></div>
+        </div>
+        
+       </div>
+        
+      </div>
+      <p>msjsdjaskd</p>
+      <div class="contenedor_principal">
+        <div class="contenedor-dos">
+          <h1>Poblacion residente 2018 - 2022</h1>
+          <div class="contenedor-dos">
+            <canvas id="myChart3"></canvas>
+          </div>
+        </div>
+        
+        <div class="contenedor-uno">
+          <h1>Tasa de propietarios 2018 - 2022</h1>
+           <div class="contenedor-uno">
+            <canvas id="myChart2"></canvas></div></div>  
+      </div>
+    </div>
+  </div>
+
+
+  </div>
+
+  </div>
+</body>
+
+</html>

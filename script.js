@@ -2,11 +2,11 @@
 // Obtener una referencia al elemento canvas del DOM
 const $grafica = document.querySelector("#grafica");
 // Las etiquetas son las que van en el eje X. 
-const etiquetas = ['Dakota del norte', 'Dakota del sur', 'Utah', 'Nebraska', 'Nuevo Hampshire', 'Florida']
+const etiquetas = ['Dakota del norte', 'Dakota del sur', 'Utah', 'Nebraska',  'Florida','Nuevo Hampshire']
 // Podemos tener varios conjuntos de datos. Comencemos con uno
 const datosVentas2020 = {
     label: "Tasa de desempleo %",
-    data: [2.1, 2.1, 2.3, 2.3, 2.5, 2.7], // La data es un arreglo que debe tener la misma cantidad de valores que la cantidad de etiquetas
+    data: [2.1, 2.1, 2.4, 2.7,2.7, 2.9 ], // La data es un arreglo que debe tener la misma cantidad de valores que la cantidad de etiquetas
     backgroundColor: 'rgba(54, 162, 235, 0.2)', // Color de fondo
     borderColor: 'rgba(54, 162, 235, 1)', // Color del borde
     borderWidth: 1,// Ancho del borde

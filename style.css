@@ -4,6 +4,7 @@
   width: 50%;
   text-align: center;
   display: inline-block;
+  justify-content: space-evenly;
 }
 
 /* Make the image to responsive */
@@ -44,5 +45,9 @@
 }
 .contenedor {
   text-align: center; /* Alinea el contenido al centro */
+  margin: 10px; 
+}
+.contenedor_left {
+  text-align: left; /* Alinea el contenido al centro */
   margin: 10px; 
 }
