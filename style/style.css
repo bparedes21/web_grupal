@@ -392,7 +392,11 @@ p {
   color: black;
 }
 
-.divred {background-color: rgba(255, 0, 0, 0.3);}
+.divred {background-color: rgba(255, 0, 0, 0.3);
+}
+.divred li {
+    color: black;}
+
 .divgreen {background-color: rgba(0, 255, 0, 0.3);}  
 .divblue{background-color: rgba(0, 0, 255, 0.3);} 
 .divyellow{background-color: rgba(255, 238, 0, 0.3);} 
