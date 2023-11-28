@@ -43,11 +43,16 @@
   transform: translate(-50%, -50%);
   text-align: center;
 }
+
 .contenedor {
-  text-align: center; /* Alinea el contenido al centro */
-  margin: 10px; 
+  text-align: center;
+  /* Alinea el contenido al centro */
+  margin: 10px;
 }
+
 .contenedor_left {
-  text-align: left; /* Alinea el contenido al centro */
-  margin: 10px; 
+  text-align: left;
+  /* Alinea el contenido al centro */
+  margin: 10px;
 }
+

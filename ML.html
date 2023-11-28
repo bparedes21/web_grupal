@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Modelos de ML</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+  <link rel="stylesheet" type="text/css" href="style/style.css" title="style" />
+  <link rel="stylesheet" type="text/css" href="style/slicer.css" title="style" />
+  <script src="script.js" defer></script>
+  <script src="slicer-script.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+  <script src="https://datamaps.github.io/scripts/0.5.0/datamaps.world.min.js"></script>
+
+
+</head>
+
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><a href="index.html">Proyecto<span class="logo_colour"> House Market</span></a></h1>
+          <h2>Proyecto grupal</h2>
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+          <li><a href="ETL.html">Introduccion y ETL</a></li>
+          <li><a href="index.html">Analisis</a></li>
+          <li><a href="Dashboard.html">Dashboard</a></li>
+          <li><a href="ML.html">Modelos de ML</a></li>
+          <li><a href="contacto.html">Sobre nosotros</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="content_header"></div>
+    <div id="site_content">
+
+      <!-- insert the page content here -->
+      <h1>Trabajamos con ML</h1>
+      <h2>Modelizacion de series temporales</h2>
+      <p>Una serie temporal o cronologica es una sucesion de datos medidos en determinados momentos y ordenados
+        cronologicamente.</p>
+
+      <button class="button" onclick="mostrarOcultarContenedor()">Jupyter nootbooks</button>
+
+      <div class="divgreen" id="miContenedor" style="display: none">
+        <h2>A continuacion:</h2>
+        <ul>
+          <li><a
+              href="https://github.com/bparedes21/Proyecto-Grupal/blob/main/Serie%20de%20Tiempo/ML_Evolucion_Precios.ipynb">Prediccion
+              con Serie evolutiva de precios 1</a>
+          </li>
+          <li><a
+              href="https://github.com/bparedes21/Proyecto-Grupal/blob/main/Serie%20de%20Tiempo/ML_diff_Precios.ipynb">Prediccion
+              con Serie evolutiva de precios 2</a>
+          </li>
+        </ul>
+      </div>
+
+      <p>
+
+        Los pasos fueron:</p>
+
+      <ul>
+        <li>Entrenamiento del modelo</li>
+        <li>Evaluacion del modelo</li>
+        <li>Prediccion</li>
+      </ul>
+      <p>Para conocer su comportamiento. Determinar:</p>
+      <ul>
+        <li>Tendencia</li>
+        <li>Estacionalidad</li>
+        <li>Residuos</li>
+      </ul>
+      <button class="button1" onclick="mostrarOcultarContenedor1()">Conclusion</button>
+
+      <div class="divred" id="miContenedor1" style="display: none">
+        <h1>A continuacion:</h1>
+        <ol>
+          <li>Al analizar los resultados de las metricas de evaluacion y las graficas de prediccion se determina que el
+            modelo Prophet es el que mejor ajusta a nuestro problema.</li>
+        </ol>
+      </div>
+      <h2>Video deploy ETL-DB-DOCKER-HIVE</h2>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/z9z-gUA_OKQ/?controls=0"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+</body>
+
+</html>
